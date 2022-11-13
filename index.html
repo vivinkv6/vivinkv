@@ -38,6 +38,12 @@
     />
     <!-- Custom styles for this template -->
     <link href="css/resume.min.css" rel="stylesheet" />
+
+    <!-- Bootstrap icons CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.1/font/bootstrap-icons.css"
+    />
   </head>
 
   <body id="page-top">
@@ -98,6 +104,18 @@
 
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
+          </li>
+          <li class="nav-item">
+            <i
+              id="dark"
+              style="font-size: 30px; color: rgb(255, 255, 255)"
+              class="bi bi-moon-stars-fill"
+            ></i>
+            <i
+              style="display: none; font-size: 30px; color: rgb(255, 255, 255)"
+              id="light"
+              class="bi bi-brightness-high-fill"
+            ></i>
           </li>
         </ul>
       </div>
@@ -384,5 +402,24 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/resume.min.js"></script>
+
+    <!-- jquery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      //dark mode or light mode logic using jquery
+      $(document).ready(function () {
+        $("#dark").click(function () {
+          $("body").css({ "background-color": "#141414" });
+          $("#light").show();
+          $(this).hide();
+        });
+
+        $("#light").click(function () {
+          $("body").css({ "background-color": "white" });
+          $("#dark").show();
+          $(this).hide();
+        });
+      });
+    </script>
   </body>
 </html>
